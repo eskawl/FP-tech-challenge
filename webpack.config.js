@@ -1,6 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const devMode = process.env.NODE_ENV === 'development';
 
 const devConfig = {
@@ -32,13 +33,25 @@ let config = {
                             }
                         }]
                     ]
-                } 
+                }
             },
             {
                 test: /\.s?css$/,
                 loader: [
                     'style-loader',
                     'css-loader',
+                    {
+                        loader: require.resolve('postcss-loader'),
+                        options: {
+                            ident: 'postcss',
+                            plugins: () => [
+                                require('postcss-flexbugs-fixes'),
+                                autoprefixer({
+                                    browsers: ['defaults'],
+                                }),
+                            ],
+                        },
+                    },
                     'sass-loader'
                 ],
             },
@@ -61,7 +74,7 @@ let config = {
         new webpack.DefinePlugin({
             'process.env': {
                 PORT: JSON.stringify(process.env.PORT)
-            } 
+            }
         })
     ]
 }

@@ -1,3 +1,5 @@
+import './editor.scss';
+
 const controller = ['$scope', '$http', 'Upload', function ($scope, $http, Upload){
     // region State
     this.editorState = {

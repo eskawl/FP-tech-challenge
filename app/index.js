@@ -1,6 +1,7 @@
 import angular from 'angular';
 import ngFileUpload from 'ng-file-upload';
 import editorComponent from './editor';
+import 'normalize.css';
 
 /* Goals
 

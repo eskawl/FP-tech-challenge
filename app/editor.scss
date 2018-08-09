@@ -1,0 +1,108 @@
+$dark: #b5b5b5;
+
+%card{
+    box-shadow: 5px 4px 2px -3px $dark, -3px -3px 4px -4px $dark;
+    border: 1px solid $dark;
+    border-radius: 5px;
+}
+
+html, body {
+    height: 100vh;
+    font-size: 16px;
+}
+
+button{
+    cursor: pointer;
+    background: white;
+    border-image: none;
+}
+
+.icon-button{
+
+    height: 50px;
+    width: 50px;
+    margin: 10px 20px;
+
+    &:hover{
+        box-shadow: 5px 4px 2px -3px $dark, -3px -3px 4px -4px $dark;
+        border-radius: 2px;
+
+    }
+}
+
+form{
+    margin: 10px;
+    border-top: 2px solid grey;
+
+}
+
+.upload-button{
+    background: rgb(0, 132, 255);
+    color: white;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    cursor: pointer;
+    justify-content: space-around;
+}
+
+h3{
+    color: darkgrey;
+    padding: 20px 5px;
+    border-bottom: 2px solid grey;
+}
+
+h4 {
+    color: darkgrey;
+}
+
+.app-wrap{
+    display: flex;
+    justify-content: space-around;
+    background: rgb(235, 235, 235);
+    padding: 15px;
+    height: 100%;
+    box-sizing: border-box;
+
+    .app{
+        display: flex;
+        max-width: 1000px;
+        background: white;
+        @extend %card;
+
+        
+        .editor-wrap{
+            border: 3px solid $dark;
+            margin: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .sidebar{
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 10px;
+
+            &>div{
+                padding: 10px;
+            }
+
+            .designs{
+                &>div{
+                    cursor: pointer;
+                    height: 40px;
+                    padding: 10px;                    
+                    @extend %card;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .controls{
+                @extend %card;
+                transition: all 0.3s ease-out;
+            }
+        }
+    }
+}
