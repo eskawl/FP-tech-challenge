@@ -19,7 +19,7 @@ const controller = ['$scope', '$http', 'Upload', function ($scope, $http, Upload
     this.savedDesigns = [];
     // endregion
     
-    const historyLength = 5;
+    const historyLength = 15;
     const apiHost = `http://localhost:${process.env.PORT}`;
 
     // region Http API
@@ -109,6 +109,7 @@ const controller = ['$scope', '$http', 'Upload', function ($scope, $http, Upload
                 console.log(response);
                 this._clearCanvas();
                 this._addImageToCanvas(response.data.outcome);
+                prevState = canvas.toDatalessJSON();
             } else {
                 // TODO: Show error;
                 console.log(error);
@@ -130,6 +131,8 @@ const controller = ['$scope', '$http', 'Upload', function ($scope, $http, Upload
         
         const text = new fabric.Text(this.editorState.addTextForm.text, { left: 100, top: 100 });
         canvas.add(text);
+
+        prevState = canvas.toDatalessJSON();
 
         this.hideForms();
     }
