@@ -1,0 +1,36 @@
+<div>
+    <div>
+        <canvas id="main-editor" height="700" width="400"/>
+    </div>
+    <div class="history">
+        <h4>History</h4>
+        <div ng-repeat="e in ctrl.editorState.history">
+            {{ e.event.transform.action }}
+        </div>
+    </div>
+    <div class="designs">
+        <div ng-repeat="design in ctrl.savedDesigns" ng-click="ctrl.loadDesign(design)">{{design.name}}</div>
+    </div>
+    <div class="controls">
+        <button ng-click="ctrl.undo()">Undo</button>
+        <button ng-click="ctrl.openImageForm()">Select Image</button>
+        <button ng-click="ctrl.openTextForm()">Add Text</button>
+        <button ng-click="ctrl.saveDesign()">Save</button>
+    </div>
+    <form name="addImageForm" ng-if="ctrl.editorState.showImageFrom" ng-submit="addImageForm.$valid && ctrl.addImage($event)">
+        <div class="button" 
+            ngf-select ng-model="ctrl.editorState.imageForm.file" 
+            ngf-pattern="'image/*'"
+            ngf-accept="'image/*'"
+            >
+            Select
+        </div>
+        <button type="submit">Add</button>
+        <button ng-click="ctrl.hideForms()">Cancel</button>
+    </form>
+    <form name="addTextForm" ng-if="ctrl.editorState.showTextForm" ng-submit="addTextForm.$valid && ctrl.addText($event)">
+        <input type="text" ng-model="ctrl.editorState.addTextForm.text" ng-required="true">
+        <button type="submit">Add</button>
+        <button ng-click="ctrl.hideForms()">Cancel</button>
+    </form>
+</div>
