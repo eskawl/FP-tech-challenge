@@ -22,11 +22,20 @@ button{
     height: 50px;
     width: 50px;
     margin: 10px 20px;
+    border-radius: 2px;
 
     &:hover{
         box-shadow: 5px 4px 2px -3px $dark, -3px -3px 4px -4px $dark;
-        border-radius: 2px;
+    }
 
+    &[disabled]{
+        background: lightgray;
+        cursor: not-allowed;
+
+        &:hover{
+            box-shadow: none;
+            border-radius: 2px;
+        }
     }
 }
 
@@ -96,6 +105,7 @@ h4 {
                     @extend %card;
                     display: flex;
                     align-items: center;
+                    margin: 5px 0;
                 }
             }
 

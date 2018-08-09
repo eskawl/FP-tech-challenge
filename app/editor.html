@@ -5,7 +5,7 @@
         </div>
         <div class="sidebar">
             <div class="controls">
-                <button class="icon-button" ng-click="ctrl.undo()"><i class="fa fa-undo"></i></button>
+                <button class="icon-button" ng-disabled="!ctrl.editorState.history.length" ng-click="ctrl.undo()"><i class="fa fa-undo"></i></button>
                 <button class="icon-button" ng-click="ctrl.openImageForm()"><i class="fa fa-image"></i></button>
                 <button class="icon-button" ng-click="ctrl.openTextForm()"><i class="fa fa-font"></i></button>
                 <button class="icon-button" ng-click="ctrl.saveDesign()"><i class="fa fa-save"></i></button>

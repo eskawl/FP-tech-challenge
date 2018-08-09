@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const devMode = process.env.NODE_ENV === 'development';
 
+// TODO: Add webpack html plugin to support miniCssExtractPlugin and external angular
 const devConfig = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
