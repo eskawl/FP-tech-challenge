@@ -11,7 +11,7 @@ ____________
 
 - Development
 1. Execute `npm run dev` to start webpack's dev server.
-2. Use VS Code's debug configurations to start the development server
+2. Use VS Code's debug configurations to start the development server or Execute `npm run dev:server` to start the API server
 3. The server runs on http://localhost:8080.
 
 - Build
