@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { getConnection } = require('./server/utils')
 
 module.exports = {
 
@@ -28,20 +29,9 @@ module.exports = {
   //   }
   // },
 
-  // production: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user:     'username',
-  //     password: 'password'
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations'
-  //   }
-  // }
+  production: {
+    client: 'mysql',
+    connection: getConnection(),
+  }
 
 };
