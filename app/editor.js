@@ -20,7 +20,7 @@ const controller = ['$scope', '$http', 'Upload', function ($scope, $http, Upload
     // endregion
     
     const historyLength = 15;
-    const apiHost = `http://localhost:${process.env.PORT}`;
+    const apiHost = `http://${process.env.HOST}:${process.env.PORT}`;
 
     // region Http API
     this.$onInit = () => {

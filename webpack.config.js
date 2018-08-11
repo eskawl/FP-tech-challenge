@@ -74,6 +74,7 @@ let config = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
+                HOST: JSON.stringify(process.env.HOST),
                 PORT: JSON.stringify(process.env.PORT)
             }
         })
