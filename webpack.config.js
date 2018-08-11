@@ -74,7 +74,7 @@ let config = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-                API_HOST: devMode ? `http://${process.env.HOST}:${process.env.PORT}` : process.env.HOST,
+                API_HOST: devMode ? JSON.stringify(`http://${process.env.HOST}:${process.env.PORT}`) : JSON.stringify(process.env.HOST),
             }
         })
     ]
