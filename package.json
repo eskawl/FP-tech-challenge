@@ -9,7 +9,7 @@
     "migrate": "knex migrate:latest",
     "start": "export NODE_ENV=production && node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build && npm run migrate"
   },
   "keywords": [],
   "author": "srutesh",
